@@ -1,24 +1,21 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using AutoMapper;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 using Zeus.OneSignalMVC.Data;
 using Zeus.OneSignalMVC.Models;
+using Zeus.OneSignalMVC.Services;
 
 namespace Zeus.OneSignalMVC.Controllers
 {
     [Authorize]
     public class ManageController : ControllerShared
     {
-        public ManageController()
-        {
-        }
-
-        public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager, OneSignalDBContext context) 
-            :base(userManager, signInManager, context)
+        public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager, OneSignalDBContext context, IMapper mapper, IAppService appService)
+            : base(userManager, signInManager, context, mapper, appService)
         {           
         }        
 

@@ -12,32 +12,30 @@ namespace Zeus.OneSignalMVC.Controllers
 {
     public class ControllerShared : Controller
     {
-        private ApplicationSignInManager _signInManager;
-        private ApplicationUserManager _userManager;
-        private OneSignalDBContext _context;
-        private AppService _appService;
-        protected IMapper _mapper = AppMap.AppMapConfig();
+        private readonly ApplicationSignInManager _signInManager;
+        private readonly ApplicationUserManager _userManager;
+        private readonly OneSignalDBContext _context;
+        private readonly IAppService _appService;
+        private readonly IMapper _mapper;
 
-        public ControllerShared()
-        {            
-        }
-
-        public ControllerShared(ApplicationUserManager userManager, ApplicationSignInManager signInManager, OneSignalDBContext context)
+        public ControllerShared(ApplicationUserManager userManager, 
+                                ApplicationSignInManager signInManager, 
+                                OneSignalDBContext context, 
+                                IMapper mapper, 
+                                IAppService appService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _context = context;
+            _mapper = mapper;
+            _appService = appService;
         }
 
         public ApplicationSignInManager SignInManager
         {
             get
             {
-                return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
-            }
-            private set
-            {
-                _signInManager = value;
+                return _signInManager;
             }
         }
 
@@ -45,11 +43,7 @@ namespace Zeus.OneSignalMVC.Controllers
         {
             get
             {
-                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            }
-            private set
-            {
-                _userManager = value;
+                return _userManager;
             }
         }
 
@@ -57,23 +51,23 @@ namespace Zeus.OneSignalMVC.Controllers
         {
             get
             {
-                return _context ?? HttpContext.GetOwinContext().Get<OneSignalDBContext>();
-            }
-            private set
-            {
-                _context = value;
+                return _context;
             }
         }
 
-        public AppService AppService
+        public IAppService AppService
         {
             get
             {
-                return _appService ?? HttpContext.GetOwinContext().Get<AppService>();
+                return _appService;
             }
-            private set
+        }
+
+        public IMapper Mapper
+        {
+            get
             {
-                _appService = value;
+                return _mapper;
             }
         }
 
@@ -94,31 +88,6 @@ namespace Zeus.OneSignalMVC.Controllers
             }
             return false;
         }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                if (_userManager != null)
-                {
-                    _userManager.Dispose();
-                    _userManager = null;
-                }
-
-                if (_signInManager != null)
-                {
-                    _signInManager.Dispose();
-                    _signInManager = null;
-                }
-
-                if (_context != null)
-                {
-                    _context.Dispose();
-                    _context = null;
-                }
-            }
-
-            base.Dispose(disposing);
-        }
+        
     }
 }

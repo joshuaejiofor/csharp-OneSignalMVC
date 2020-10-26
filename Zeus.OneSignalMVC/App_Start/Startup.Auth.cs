@@ -4,9 +4,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Owin;
-using Zeus.OneSignalMVC.Data;
-using Zeus.OneSignalMVC.Models;
-using Zeus.OneSignalMVC.Services;
+using Zeus.OneSignalMVC.Data.CoreModels;
 
 namespace Zeus.OneSignalMVC
 {
@@ -16,10 +14,10 @@ namespace Zeus.OneSignalMVC
         public void ConfigureAuth(IAppBuilder app)
         {
             // Configure the db context, user manager and signin manager to use a single instance per request
-            app.CreatePerOwinContext(OneSignalDBContext.Create);
-            app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
-            app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);
-            app.CreatePerOwinContext(AppService.Create);
+            //app.CreatePerOwinContext(OneSignalDBContext.Create);
+            //app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
+            //app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);
+            //app.CreatePerOwinContext(AppService.Create);
 
             // Enable the application to use a cookie to store information for the signed in user
             // and to use a cookie to temporarily store information about a user logging in with a third party login provider

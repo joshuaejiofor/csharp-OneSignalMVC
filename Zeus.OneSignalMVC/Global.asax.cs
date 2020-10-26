@@ -1,4 +1,3 @@
-using Autofac;
 using AutoMapper;
 using System;
 using System.Collections.Generic;

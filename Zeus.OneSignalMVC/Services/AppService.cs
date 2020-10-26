@@ -13,7 +13,7 @@ using Zeus.OneSignalMVC.Models;
 
 namespace Zeus.OneSignalMVC.Services
 {
-    public class AppService : IAppService, IDisposable
+    public class AppService : IAppService
     {
         public async Task<List<AppViewModel>> GetAllApps()
         {
@@ -119,15 +119,6 @@ namespace Zeus.OneSignalMVC.Services
                     return false;
                 }
             }
-        }
-
-        public static AppService Create()
-        {
-            return new AppService();
-        }
-
-        public void Dispose()
-        {
         }
     }
 }
