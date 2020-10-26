@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>
+    @if (Request.IsAuthenticated){
+        if(ViewBag.IsAdmin ?? false) { 
+            @Html.Raw("Admin "); 
+        } 
+        else { 
+            @Html.Raw("Data Entry Operator "); 
+        }        
+    }
+    Demo</h1>
+    <p class="lead">OneSignal is the market leader in customer engagement, powering mobile + web push, email & in-app messages.</p>
+    <p><a href="https://onesignal.com/" target="_blank" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>

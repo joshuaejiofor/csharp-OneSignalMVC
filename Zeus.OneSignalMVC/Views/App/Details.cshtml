@@ -1,0 +1,201 @@
+﻿@model Zeus.OneSignalMVC.Models.AppViewModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h4>@Model.Name Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Players)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Players)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Messageable_players)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Messageable_players)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Updated_at)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Updated_at)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Created_at)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Created_at)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gcm_key)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gcm_key)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chrome_key)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chrome_key)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chrome_web_origin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chrome_web_origin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chrome_web_gcm_sender_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chrome_web_gcm_sender_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chrome_web_default_notification_icon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chrome_web_default_notification_icon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chrome_web_sub_domain)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chrome_web_sub_domain)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apns_env)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apns_env)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apns_certificates)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apns_certificates)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Safari_apns_certificate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Safari_apns_certificate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Safari_site_origin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Safari_site_origin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Safari_push_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Safari_push_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Safari_icon_16_16)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Safari_icon_16_16)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Safari_icon_32_32)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Safari_icon_32_32)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Safari_icon_64_64)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Safari_icon_64_64)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Safari_icon_128_128)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Safari_icon_128_128)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Safari_icon_256_256)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Safari_icon_256_256)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Site_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Site_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Basic_auth_key)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Basic_auth_key)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
