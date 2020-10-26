@@ -4,7 +4,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Web.Configuration;
-using Zeus.OneSignalMVC.Models;
+using Zeus.OneSignalMVC.Data.CoreModels;
 
 namespace Zeus.OneSignalMVC.Data
 {

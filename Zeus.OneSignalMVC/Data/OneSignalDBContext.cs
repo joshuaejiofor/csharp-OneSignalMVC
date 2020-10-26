@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
-using System.Data.Entity.ModelConfiguration.Conventions;
-using Zeus.OneSignalMVC.Models;
+using Zeus.OneSignalMVC.Data.CoreModels;
 
 namespace Zeus.OneSignalMVC.Data
 {

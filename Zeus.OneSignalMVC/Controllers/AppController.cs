@@ -12,13 +12,19 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Configuration;
 using System.Web.Mvc;
+using Zeus.OneSignalMVC.Data;
 using Zeus.OneSignalMVC.Models;
+using Zeus.OneSignalMVC.Services;
 
 namespace Zeus.OneSignalMVC.Controllers
 {
     [Authorize]
     public class AppController : ControllerShared
-    {       
+    { 
+        public AppController(ApplicationUserManager userManager, ApplicationSignInManager signInManager, OneSignalDBContext context, IMapper mapper, IAppService appService)
+            : base(userManager, signInManager, context, mapper, appService) 
+        {
+        }
 
         public async Task<ActionResult> Index()
         {
@@ -62,7 +68,7 @@ namespace Zeus.OneSignalMVC.Controllers
                 ModelState.AddModelError(string.Empty, "Server error. Please contact administrator.");
             }
 
-            var appUpdateModel = _mapper.Map<AppUpdateModel>(app);
+            var appUpdateModel = Mapper.Map<AppUpdateModel>(app);
             appUpdateModel.Id = Id;
 
             ViewBag.IsAdmin = IsAdminUser();
@@ -75,7 +81,7 @@ namespace Zeus.OneSignalMVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                var appCreateModel = _mapper.Map<AppCreateModel>(appUpdateModel);
+                var appCreateModel = Mapper.Map<AppCreateModel>(appUpdateModel);
                 var isUpdated = await AppService.UpdateApp(appUpdateModel.Id, appCreateModel);
                 if (isUpdated)
                 {
